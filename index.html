@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lubwama Children's Soul Foundation - Healing Children's Souls</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --primary-green: #059669;
+            --secondary-blue: #3b82f6;
+            --secondary-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f97316;
+            --light-blue: #dbeafe;
+            --light-green: #d1fae5;
+            --dark-text: #1e293b;
+            --light-text: #64748b;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--off-white) 0%, #e0f2fe 100%);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--white), #e0f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            margin-top: -0.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .primary-button {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .secondary-button:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .blue-text {
+            color: var(--primary-blue);
+        }
+
+        .green-text {
+            color: var(--primary-green);
+        }
+
+        .purple-text {
+            color: var(--accent-purple);
+        }
+
+        .hero-image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .vision-mission {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+        }
+
+        .vision-mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .vision-card, .mission-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .card-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .objective-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .objective-icon {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-green) 100%);
+            padding: 1rem;
+            border-radius: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .objective-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-desc {
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .programs-section {
+            background: linear-gradient(135deg, var(--off-white) 0%, #e0f2fe 100%);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            background: var(--white);
+            padding: 0.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .tab-button {
+            padding: 0.75rem 2rem;
+            border: none;
+            background: transparent;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .program-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .program-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .program-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--primary-green);
+        }
+
+        .status-completed {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-blue);
+        }
+
+        .program-desc {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .progress-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 0.75rem;
+            background: #e2e8f0;
+            border-radius: 0.375rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            border-radius: 0.375rem;
+        }
+
+        .support-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .support-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .funding-section {
+            background: var(--white);
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .funding-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .funding-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .funding-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .icon-blue {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #bfdbfe 100%);
+            color: var(--primary-blue);
+        }
+
+        .icon-green {
+            background: linear-gradient(135deg, var(--light-green) 0%, #a7f3d0 100%);
+            color: var(--primary-green);
+        }
+
+        .icon-purple {
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+            color: var(--accent-purple);
+        }
+
+        .icon-orange {
+            background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+            color: var(--accent-orange);
+        }
+
+        .funding-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .funding-impact {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .funding-button {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .button-blue {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+        }
+
+        .button-green {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+        }
+
+        .button-purple {
+            background: linear-gradient(135deg, #7c3aed 0%, var(--accent-purple) 100%);
+            color: var(--white);
+        }
+
+        .button-orange {
+            background: linear-gradient(135deg, #ea580c 0%, var(--accent-orange) 100%);
+            color: var(--white);
+        }
+
+        .funding-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .leadership-section {
+            background: linear-gradient(135deg, var(--off-white) 0%, #e0f2fe 100%);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .leader-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .leader-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .leader-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-position {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .leader-contact {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            background: #1e293b;
+            color: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-text p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .footer {
+            background: #0f172a;
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .footer-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-contact-icon {
+            color: var(--primary-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .vision-mission-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .funding-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .leadership-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .funding-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                    <div class="logo-text">LCSF</div>
+                    <div class="tagline">Healing Children's Souls</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#programs" class="nav-link">Programs</a>
+                <a href="#impact" class="nav-link">Impact</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="cta-button">
+                <i class="fas fa-hands-helping"></i> Support Children
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Healing <span class="gradient-text">Children's Souls</span> Through Hope</h1>
+                <p>Supporting orphans, HIV/AIDS affected children, and vulnerable youth in Jinja District through education, mentorship, and sustainable livelihood programs.</p>
+                <div class="hero-buttons">
+                    <button class="primary-button">
+                        <i class="fas fa-heart"></i> Support a Child Today
+                    </button>
+                    <button class="secondary-button">
+                        <i class="fas fa-users"></i> See Our Impact
+                    </button>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number blue-text">350+</div>
+                        <div>Children Supported</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number green-text">$75K+</div>
+                        <div>Funds Raised</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number purple-text">12</div>
+                        <div>Active Programs</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/600x500/2563eb/ffffff?text=Happy+Ugandan+Children" alt="Happy Children">
+                <div class="image-overlay">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 1rem; border-radius: 1rem;">
+                            <i class="fas fa-check-circle" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; font-size: 1.1rem;">Sarah's Success Story</div>
+                            <div style="color: #64748b;">Now in A-Level, pursuing nursing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission">
+        <div class="vision-mission-container">
+            <div class="vision-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="card-title">Our Vision</h3>
+                </div>
+                <p class="card-content">
+                    Having each child in Community grow into a peaceful, hope filled and productive adult through emotional, social, skillful and spiritual support.
+                </p>
+            </div>
+            <div class="mission-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="card-title">Our Mission</h3>
+                </div>
+                <p class="card-content">
+                    To promote physical and emotional wellbeing of children's healing through character education for children marginalized by Orphans, HIV/AIDS, War and Child abuse.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="section" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="gradient-text">Comprehensive Objectives</span></h2>
+                <p class="section-subtitle">
+                    Holistic approach to child development and community empowerment through 7 key pillars.
+                </p>
+            </div>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Education Access</div>
+                            <div class="objective-desc">Ensure quality education through school fees, materials, and career guidance for children aged 4-24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Holistic Development</div>
+                            <div class="objective-desc">Mentorship programs, workshops, and skill-building initiatives for youth development</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Livelihood Improvement</div>
+                            <div class="objective-desc">Skills in soap making, goat rearing, poultry keeping, and agro-smart farming</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Child Protection</div>
+                            <div class="objective-desc">Community work, hygiene practices, and child safety measures implementation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Emotional Support</div>
+                            <div class="objective-desc">Caregiver hub for emotional healing and mentorship training programs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Nutrition Support</div>
+                            <div class="objective-desc">Sack gardening and backyard farming for better child nutrition</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-header">
+                        <div class="objective-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div>
+                            <div class="objective-title">Environmental Conservation</div>
+                            <div class="objective-desc">Go-green initiatives to improve community wealth and environment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="section programs-section" id="programs">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Where Your <span class="gradient-text">Support</span> Goes</h2>
+                <p class="section-subtitle">
+                    Every program is designed for maximum impact and complete transparency. See exactly how your contribution transforms lives and builds futures.
+                </p>
+            </div>
+            <div class="tabs">
+                <button class="tab-button active">Current Programs</button>
+                <button class="tab-button">Completed Programs</button>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        SCHOOL FEE SUPPORT
+                    </div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <div class="program-title">School Fee Support Program</div>
+                            <div class="program-status status-active">Active</div>
+                        </div>
+                        <p class="program-desc">
+                            Providing full school fee support to orphaned and vulnerable children in Jinja District
+                        </p>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Raised: $18,500</span>
+                                <span>Goal: $25,000</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 74%"></div>
+                            </div>
+                            <div class="progress-header">
+                                <span class="blue-text">74% funded</span>
+                                <span>$6,500 needed</span>
+                            </div>
+                        </div>
+                        <button class="support-button">
+                            <i class="fas fa-heart"></i> Support This Program
+                        </button>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        AGRO-SMART FARMING
+                    </div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <div class="program-title">Agro-Smart Farming Initiative</div>
+                            <div class="program-status status-active">Active</div>
+                        </div>
+                        <p class="program-desc">
+                            Teaching sustainable farming techniques and providing seeds for sack gardening
+                        </p>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Raised: $12,000</span>
+                                <span>Goal: $15,000</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                            <div class="progress-header">
+                                <span class="blue-text">80% funded</span>
+                                <span>$3,000 needed</span>
+                            </div>
+                        </div>
+                        <button class="support-button">
+                            <i class="fas fa-heart"></i> Support This Program
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funding Options -->
+    <section class="section funding-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Your <span class="gradient-text">Support</span> Options</h2>
+                <p class="section-subtitle">
+                    Choose how you'd like to contribute. Every amount, no matter how small, makes a meaningful difference in a child's life.
+                </p>
+            </div>
+            <div class="funding-grid">
+                <div class="funding-card">
+                    <div class="funding-icon icon-blue">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="funding-amount">$25</div>
+                    <div class="funding-impact">Monthly support for 1 child</div>
+                    <button class="funding-button button-blue">Choose This</button>
+                </div>
+                <div class="funding-card">
+                    <div class="funding-icon icon-green">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="funding-amount">$50</div>
+                    <div class="funding-impact">School supplies for 1 student</div>
+                    <button class="funding-button button-green">Choose This</button>
+                </div>
+                <div class="funding-card">
+                    <div class="funding-icon icon-purple">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="funding-amount">$100</div>
+                    <div class="funding-impact">Seed capital for farming project</div>
+                    <button class="funding-button button-purple">Choose This</button>
+                </div>
+                <div class="funding-card">
+                    <div class="funding-icon icon-orange">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="funding-amount">$250</div>
+                    <div class="funding-impact">Annual support for 1 child</div>
+                    <button class="funding-button button-orange">Choose This</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section leadership-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="gradient-text">Leadership Team</span></h2>
+                <p class="section-subtitle">
+                    Dedicated professionals committed to healing children's souls and building a better future.
+                </p>
+            </div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">WASSWA MUSA</div>
+                    <div class="leader-position">Executive Director</div>
+                    <div class="leader-contact">
+                        <div>+256 777 066 943</div>
+                        <div>+256 751 066 943</div>
+                        <div>musawasswa2020@gmail.com</div>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">GREG BUTTARS</div>
+                    <div class="leader-position">Director</div>
+                    <div class="leader-contact">
+                        <div>+1-555-0123</div>
+                        <div>wgregbuttars@gmail.com</div>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">GIMEYI MOSES</div>
+                    <div class="leader-position">Director</div>
+                    <div class="leader-contact">
+                        <div>+256 751 066 943</div>
+                        <div>mosesgimei@yahoo.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p style="color: #94a3b8; margin-bottom: 2rem; line-height: 1.6;">
+                    Have questions or want to learn more about our work? We'd love to hear from you.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <p>
+                                School Zone, Budhumbli West Ward,<br>
+                                Bugembe Town Council, Bugembe,<br>
+                                Jinja District, Uganda
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Contact Us</h4>
+                            <p>+256 777 066 943</p>
+                            <p>+256 751 066 943</p>
+                            <p>lubwamachildrenssoulfoundation@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Executive Director</h4>
+                            <p>WASSWA MUSA</p>
+                            <p>musawasswa2020@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 class="form-title">Send us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input form-textarea" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%); padding: 0.75rem; border-radius: 1rem;">
+                            <i class="fas fa-heart" style="color: white;"></i>
+                        </div>
+                        <div style="font-size: 1.5rem; font-weight: 700;">LCSF</div>
+                    </div>
+                    <div class="footer-description">
+                        Healing children's souls through hope, education, and community support in Jinja District.
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li class="footer-link">
+                        <a href="#home">
+                            <i class="fas fa-chevron-right"></i> Home
+                        </a>
+                    </li>
+                    <li class="footer-link">
+                        <a href="#about">
+                            <i class="fas fa-chevron-right"></i> About
+                        </a>
+                    </li>
+                    <li class="footer-link">
+                        <a href="#programs">
+                            <i class="fas fa-chevron-right"></i> Programs
+                        </a>
+                    </li>
+                    <li class="footer-link">
+                        <a href="#impact">
+                            <i class="fas fa-chevron-right"></i> Impact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Our Programs</h4>
+                <ul class="footer-links">
+                    <li class="footer-link">
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i> School Support
+                        </a>
+                    </li>
+                    <li class="footer-link">
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i> Farming Initiatives
+                        </a>
+                    </li>
+                    <li class="footer-link">
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i> Mentorship
+                        </a>
+                    </li>
+                    <li class="footer-link">
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i> Child Protection
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact Info</h4>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <div>Bugembe, Jinja District</div>
+                            <div>Uganda</div>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>lubwamachildrenssoulfoundation@gmail.com</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <div>+256 777 066 943</div>
+                            <div>+256 751 066 943</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Lubwama Children's Soul Foundation. All rights reserved. Healing children's souls through hope.
+        </div>
+    </footer>
+
+    <script>
+        // Simple tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
