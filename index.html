@@ -547,6 +547,23 @@
             box-shadow: var(--shadow-lg);
         }
 
+        .details-button {
+            width: 100%;
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .details-button:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
         .funding-section {
             background: var(--white);
         }
@@ -785,7 +802,7 @@
             border-radius: 0.75rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
+            color: var(--black);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -912,6 +929,146 @@
             font-size: 0.9rem;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .modal-subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--primary-green);
+        }
+
+        .modal-text {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .activities-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .activities-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .activities-list li:last-child {
+            border-bottom: none;
+        }
+
+        .activities-list i {
+            color: var(--primary-green);
+            margin-top: 0.3rem;
+        }
+
+        .progress-section {
+            margin: 1.5rem 0;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 1rem;
+            background: #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            border-radius: 0.5rem;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-green);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 3000;
+            display: none;
+        }
+
+        /* Improved Donation Form Styles */
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-group-full {
+            flex: 1;
+        }
+
+        .form-group-half {
+            flex: 1;
+        }
+
+        .custom-amount-container {
+            display: none;
+        }
+
+        .custom-amount-container.active {
+            display: block;
+        }
+
         @media (max-width: 992px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -955,6 +1112,11 @@
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
         }
 
         @media (max-width: 768px) {
@@ -981,6 +1143,113 @@
             .footer-container {
                 grid-template-columns: 1fr;
             }
+
+            .modal-content {
+                padding: 1.5rem;
+                width: 95%;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .form-input {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            .submit-button {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .primary-button, .secondary-button {
+                width: 100%;
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .stat-card {
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .tab-button {
+                width: 100%;
+                padding: 0.75rem;
+            }
+
+            .funding-amount {
+                font-size: 1.5rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .contact-text h4 {
+                font-size: 1rem;
+            }
+
+            .contact-text p {
+                font-size: 0.9rem;
+            }
+
+            .form-input {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
+
+            .submit-button {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -1004,8 +1273,8 @@
                 <a href="#impact" class="nav-link">Impact</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <button class="cta-button">
-                <i class="fas fa-hands-helping"></i> Support Children
+            <button class="cta-button" id="supportBtn">
+                <i class="fas fa-hands-helping"></i> Donate
             </button>
         </div>
     </header>
@@ -1017,10 +1286,10 @@
                 <h1>Healing <span class="gradient-text">Children's Souls</span> Through Hope</h1>
                 <p>Supporting orphans, HIV/AIDS affected children, and vulnerable youth in Jinja District through education, mentorship, and sustainable livelihood programs.</p>
                 <div class="hero-buttons">
-                    <button class="primary-button">
+                    <button class="primary-button" id="supportChildBtn">
                         <i class="fas fa-heart"></i> Support a Child Today
                     </button>
-                    <button class="secondary-button">
+                    <button class="secondary-button" id="seeImpactBtn">
                         <i class="fas fa-users"></i> See Our Impact
                     </button>
                 </div>
@@ -1185,70 +1454,11 @@
                 </p>
             </div>
             <div class="tabs">
-                <button class="tab-button active">Current Programs</button>
-                <button class="tab-button">Completed Programs</button>
+                <button class="tab-button active" data-tab="current">Current Programs</button>
+                <button class="tab-button" data-tab="completed">Completed Programs</button>
             </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-image">
-                        SCHOOL FEE SUPPORT
-                    </div>
-                    <div class="program-content">
-                        <div class="program-header">
-                            <div class="program-title">School Fee Support Program</div>
-                            <div class="program-status status-active">Active</div>
-                        </div>
-                        <p class="program-desc">
-                            Providing full school fee support to orphaned and vulnerable children in Jinja District
-                        </p>
-                        <div class="progress-container">
-                            <div class="progress-header">
-                                <span>Raised: $18,500</span>
-                                <span>Goal: $25,000</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 74%"></div>
-                            </div>
-                            <div class="progress-header">
-                                <span class="blue-text">74% funded</span>
-                                <span>$6,500 needed</span>
-                            </div>
-                        </div>
-                        <button class="support-button">
-                            <i class="fas fa-heart"></i> Support This Program
-                        </button>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image">
-                        AGRO-SMART FARMING
-                    </div>
-                    <div class="program-content">
-                        <div class="program-header">
-                            <div class="program-title">Agro-Smart Farming Initiative</div>
-                            <div class="program-status status-active">Active</div>
-                        </div>
-                        <p class="program-desc">
-                            Teaching sustainable farming techniques and providing seeds for sack gardening
-                        </p>
-                        <div class="progress-container">
-                            <div class="progress-header">
-                                <span>Raised: $12,000</span>
-                                <span>Goal: $15,000</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 80%"></div>
-                            </div>
-                            <div class="progress-header">
-                                <span class="blue-text">80% funded</span>
-                                <span>$3,000 needed</span>
-                            </div>
-                        </div>
-                        <button class="support-button">
-                            <i class="fas fa-heart"></i> Support This Program
-                        </button>
-                    </div>
-                </div>
+            <div class="programs-grid" id="programsGrid">
+                <!-- Current Programs will be loaded here -->
             </div>
         </div>
     </section>
@@ -1269,7 +1479,9 @@
                     </div>
                     <div class="funding-amount">$25</div>
                     <div class="funding-impact">Monthly support for 1 child</div>
-                    <button class="funding-button button-blue">Choose This</button>
+                    <button class="funding-button button-blue" data-amount="25">
+                        Choose This
+                    </button>
                 </div>
                 <div class="funding-card">
                     <div class="funding-icon icon-green">
@@ -1277,7 +1489,9 @@
                     </div>
                     <div class="funding-amount">$50</div>
                     <div class="funding-impact">School supplies for 1 student</div>
-                    <button class="funding-button button-green">Choose This</button>
+                    <button class="funding-button button-green" data-amount="50">
+                        Choose This
+                    </button>
                 </div>
                 <div class="funding-card">
                     <div class="funding-icon icon-purple">
@@ -1285,7 +1499,9 @@
                     </div>
                     <div class="funding-amount">$100</div>
                     <div class="funding-impact">Seed capital for farming project</div>
-                    <button class="funding-button button-purple">Choose This</button>
+                    <button class="funding-button button-purple" data-amount="100">
+                        Choose This
+                    </button>
                 </div>
                 <div class="funding-card">
                     <div class="funding-icon icon-orange">
@@ -1293,7 +1509,9 @@
                     </div>
                     <div class="funding-amount">$250</div>
                     <div class="funding-impact">Annual support for 1 child</div>
-                    <button class="funding-button button-orange">Choose This</button>
+                    <button class="funding-button button-orange" data-amount="250">
+                        Choose This
+                    </button>
                 </div>
             </div>
         </div>
@@ -1394,15 +1612,15 @@
             </div>
             <div class="contact-form">
                 <h3 class="form-title">Send us a Message</h3>
-                <form>
+                <form id="contactForm">
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Your Name">
+                        <input type="text" class="form-input" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Your Email">
+                        <input type="email" class="form-input" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-input form-textarea" placeholder="Your Message"></textarea>
+                        <textarea class="form-input form-textarea" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="submit-button">
                         Send Message
@@ -1524,20 +1742,469 @@
         </div>
     </footer>
 
+    <!-- Program Details Modal -->
+    <div id="programModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div id="modalContent">
+                <!-- Program details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeSupportModal">&times;</span>
+            <h3 class="modal-title">Support Our Cause</h3>
+            <form class="modal-form" id="supportForm">
+                <div class="form-row">
+                    <div class="form-group-full">
+                        <input type="text" class="form-input" placeholder="Your Full Name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-half">
+                        <input type="email" class="form-input" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group-half">
+                        <input type="tel" class="form-input" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-full">
+                        <select class="form-input" id="supportType" required>
+                            <option value="">Select Support Type</option>
+                            <option value="monthly">Monthly Support ($25/month)</option>
+                            <option value="school">School Supplies ($50)</option>
+                            <option value="farming">Farming Project ($100)</option>
+                            <option value="annual">Annual Child Support ($250)</option>
+                            <option value="custom">Custom Amount</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row custom-amount-container" id="customAmountContainer">
+                    <div class="form-group-full">
+                        <input type="number" class="form-input" id="customAmount" placeholder="Enter Custom Amount (USD)" min="1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-full">
+                        <button type="submit" class="submit-button">Proceed to Payment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        Thank you for your support! We'll contact you shortly.
+    </div>
+
     <script>
-        // Simple tab functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
+        // Program data
+        const programsData = {
+            current: [
+                {
+                    id: 1,
+                    title: "School Fee Support Program",
+                    status: "Active",
+                    image: "SCHOOL FEE SUPPORT",
+                    description: "Providing full school fee support to orphaned and vulnerable children in Jinja District",
+                    progress: 74,
+                    raised: "$18,500",
+                    goal: "$25,000",
+                    activities: [
+                        "Enrolled 120 children in primary schools",
+                        "Provided school uniforms and supplies",
+                        "Paid tuition fees for secondary school students",
+                        "Conducted parent-teacher meetings",
+                        "Organized career guidance workshops"
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "Agro-Smart Farming Initiative",
+                    status: "Active",
+                    image: "AGRO-SMART FARMING",
+                    description: "Teaching sustainable farming techniques and providing seeds for sack gardening",
+                    progress: 80,
+                    raised: "$12,000",
+                    goal: "$15,000",
+                    activities: [
+                        "Trained 80 families in modern farming techniques",
+                        "Distributed 200 sack gardens to households",
+                        "Provided seeds and fertilizers",
+                        "Established community demonstration plots",
+                        "Conducted monthly follow-up visits"
+                    ]
+                },
+                {
+                    id: 3,
+                    title: "Youth Mentorship Program",
+                    status: "Active",
+                    image: "YOUTH MENTORSHIP",
+                    description: "Empowering youth through mentorship, life skills, and vocational training",
+                    progress: 65,
+                    raised: "$9,750",
+                    goal: "$15,000",
+                    activities: [
+                        "Mentored 60 youth participants",
+                        "Conducted life skills workshops",
+                        "Provided vocational training in tailoring and carpentry",
+                        "Organized community service projects",
+                        "Hosted monthly peer support sessions"
+                    ]
+                },
+                {
+                    id: 4,
+                    title: "Clean Water Initiative",
+                    status: "Active",
+                    image: "CLEAN WATER",
+                    description: "Installing water purification systems in schools and communities",
+                    progress: 45,
+                    raised: "$13,500",
+                    goal: "$30,000",
+                    activities: [
+                        "Installed 5 water filtration systems in schools",
+                        "Trained 100 community members on water hygiene",
+                        "Conducted water quality testing",
+                        "Distributed water storage containers",
+                        "Established maintenance protocols"
+                    ]
+                }
+            ],
+            completed: [
+                {
+                    id: 5,
+                    title: "Emergency Relief Program",
+                    status: "Completed",
+                    image: "EMERGENCY RELIEF",
+                    description: "Providing emergency support during the 2023 floods in Jinja District",
+                    progress: 100,
+                    raised: "$25,000",
+                    goal: "$25,000",
+                    activities: [
+                        "Distributed emergency food supplies to 200 families",
+                        "Provided temporary shelter materials",
+                        "Delivered clean water and sanitation kits",
+                        "Coordinated with local authorities for evacuation",
+                        "Supported children's return to school after floods"
+                    ]
+                },
+                {
+                    id: 6,
+                    title: "Back-to-School Campaign",
+                    status: "Completed",
+                    image: "BACK TO SCHOOL",
+                    description: "Annual campaign to support children's education at the beginning of the school year",
+                    progress: 100,
+                    raised: "$35,000",
+                    goal: "$35,000",
+                    activities: [
+                        "Supported 250 children with school fees",
+                        "Distributed uniforms and learning materials",
+                        "Provided transportation assistance for rural students",
+                        "Organized school orientation sessions",
+                        "Conducted health check-ups for students"
+                    ]
+                },
+                {
+                    id: 7,
+                    title: "Community Health Outreach",
+                    status: "Completed",
+                    image: "HEALTH OUTREACH",
+                    description: "Providing basic healthcare services and health education in rural communities",
+                    progress: 100,
+                    raised: "$18,000",
+                    goal: "$18,000",
+                    activities: [
+                        "Conducted 15 mobile clinic visits",
+                        "Screened 800 community members for common diseases",
+                        "Distributed mosquito nets to 300 households",
+                        "Provided health education workshops",
+                        "Connected patients to specialized care when needed"
+                    ]
+                },
+                {
+                    id: 8,
+                    title: "Girls' Empowerment Workshop",
+                    status: "Completed",
+                    image: "GIRLS EMPOWERMENT",
+                    description: "Building confidence and leadership skills among adolescent girls",
+                    progress: 100,
+                    raised: "$12,000",
+                    goal: "$12,000",
+                    activities: [
+                        "Trained 100 girls in leadership and communication skills",
+                        "Provided menstrual hygiene education",
+                        "Organized mentorship sessions with successful women",
+                        "Conducted self-defense workshops",
+                        "Created peer support networks"
+                    ]
+                }
+            ]
+        };
+
+        // DOM Elements
+        const supportBtn = document.getElementById('supportBtn');
+        const supportChildBtn = document.getElementById('supportChildBtn');
+        const seeImpactBtn = document.getElementById('seeImpactBtn');
+        const programModal = document.getElementById('programModal');
+        const supportModal = document.getElementById('supportModal');
+        const closeModal = document.getElementById('closeModal');
+        const closeSupportModal = document.getElementById('closeSupportModal');
+        const supportForm = document.getElementById('supportForm');
+        const contactForm = document.getElementById('contactForm');
+        const notification = document.getElementById('notification');
+        const fundingButtons = document.querySelectorAll('.funding-button');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const programsGrid = document.getElementById('programsGrid');
+        const supportType = document.getElementById('supportType');
+        const customAmountContainer = document.getElementById('customAmountContainer');
+        const customAmount = document.getElementById('customAmount');
+
+        // Show notification function
+        function showNotification(message) {
+            notification.innerHTML = message;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+
+        // Open modal function
+        function openModal(modal) {
+            modal.style.display = 'flex';
+        }
+
+        // Close modal function
+        function closeModalFunc(modal) {
+            modal.style.display = 'none';
+        }
+
+        // Render programs
+        function renderPrograms(programType) {
+            const programs = programsData[programType];
+            programsGrid.innerHTML = '';
             
-            tabButtons.forEach(button => {
+            programs.forEach(program => {
+                const statusClass = program.status === 'Active' ? 'status-active' : 'status-completed';
+                const statusText = program.status === 'Active' ? 'Active' : 'Completed';
+                
+                const programCard = document.createElement('div');
+                programCard.className = 'program-card';
+                programCard.innerHTML = `
+                    <div class="program-image">
+                        ${program.image}
+                    </div>
+                    <div class="program-content">
+                        <div class="program-header">
+                            <div class="program-title">${program.title}</div>
+                            <div class="program-status ${statusClass}">${statusText}</div>
+                        </div>
+                        <p class="program-desc">
+                            ${program.description}
+                        </p>
+                        ${program.status === 'Active' ? `
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Raised: ${program.raised}</span>
+                                <span>Goal: ${program.goal}</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${program.progress}%"></div>
+                            </div>
+                            <div class="progress-header">
+                                <span class="blue-text">${program.progress}% funded</span>
+                                <span>$${Math.round((parseFloat(program.goal.replace(/[^0-9.]/g, '')) - parseFloat(program.raised.replace(/[^0-9.]/g, ''))) * 100) / 100} needed</span>
+                            </div>
+                        </div>
+                        ` : ''}
+                        <button class="support-button" data-program-id="${program.id}">
+                            <i class="fas fa-heart"></i> ${program.status === 'Active' ? 'Support This Program' : 'View Details'}
+                        </button>
+                        <button class="details-button" data-program-id="${program.id}">
+                            <i class="fas fa-info-circle"></i> Program Details
+                        </button>
+                    </div>
+                `;
+                
+                programsGrid.appendChild(programCard);
+            });
+            
+            // Add event listeners to the new buttons
+            document.querySelectorAll('.support-button').forEach(button => {
                 button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
+                    const programId = parseInt(this.getAttribute('data-program-id'));
+                    const program = [...programsData.current, ...programsData.completed].find(p => p.id === programId);
+                    
+                    if (program.status === 'Active') {
+                        openModal(supportModal);
+                        showNotification(`Thank you for supporting the ${program.title} program! Please complete your donation.`);
+                    } else {
+                        showProgramDetails(programId);
+                    }
                 });
             });
+            
+            document.querySelectorAll('.details-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const programId = parseInt(this.getAttribute('data-program-id'));
+                    showProgramDetails(programId);
+                });
+            });
+        }
 
+        // Show program details
+        function showProgramDetails(programId) {
+            const program = [...programsData.current, ...programsData.completed].find(p => p.id === programId);
+            
+            if (program) {
+                const modalContent = document.getElementById('modalContent');
+                const statusClass = program.status === 'Active' ? 'status-active' : 'status-completed';
+                const statusText = program.status === 'Active' ? 'Active' : 'Completed';
+                
+                modalContent.innerHTML = `
+                    <h3 class="modal-title">${program.title}</h3>
+                    <div class="program-header">
+                        <div class="program-status ${statusClass}">${statusText}</div>
+                    </div>
+                    <p class="modal-text">${program.description}</p>
+                    
+                    ${program.status === 'Active' ? `
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span>Raised: ${program.raised}</span>
+                            <span>Goal: ${program.goal}</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${program.progress}%"></div>
+                        </div>
+                        <div class="progress-header">
+                            <span class="blue-text">${program.progress}% funded</span>
+                            <span>$${Math.round((parseFloat(program.goal.replace(/[^0-9.]/g, '')) - parseFloat(program.raised.replace(/[^0-9.]/g, ''))) * 100) / 100} needed</span>
+                        </div>
+                    </div>
+                    ` : ''}
+                    
+                    <h4 class="modal-subtitle">Activities Carried Out</h4>
+                    <ul class="activities-list">
+                        ${program.activities.map(activity => `
+                            <li><i class="fas fa-check-circle"></i> ${activity}</li>
+                        `).join('')}
+                    </ul>
+                    
+                    ${program.status === 'Active' ? `
+                    <button class="support-button" style="margin-top: 1.5rem;" data-program-id="${program.id}">
+                        <i class="fas fa-heart"></i> Support This Program
+                    </button>
+                    ` : ''}
+                `;
+                
+                openModal(programModal);
+                
+                // Add event listener to the support button in modal if it exists
+                const modalSupportButton = modalContent.querySelector('.support-button');
+                if (modalSupportButton) {
+                    modalSupportButton.addEventListener('click', function() {
+                        closeModalFunc(programModal);
+                        openModal(supportModal);
+                        showNotification(`Thank you for supporting the ${program.title} program! Please complete your donation.`);
+                    });
+                }
+            }
+        }
+
+        // Event Listeners
+        supportBtn.addEventListener('click', () => openModal(supportModal));
+        supportChildBtn.addEventListener('click', () => openModal(supportModal));
+        closeModal.addEventListener('click', () => closeModalFunc(programModal));
+        closeSupportModal.addEventListener('click', () => closeModalFunc(supportModal));
+
+        // Support type change handler
+        supportType.addEventListener('change', function() {
+            if (this.value === 'custom') {
+                customAmountContainer.classList.add('active');
+                customAmount.required = true;
+            } else {
+                customAmountContainer.classList.remove('active');
+                customAmount.required = false;
+            }
+        });
+
+        // Support form submission
+        supportForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            // Get values by order of inputs in the form
+            const name = this[0].value;
+            const email = this[1].value;
+            const phone = this[2].value;
+            const supportTypeValue = supportType.value;
+            let supportTypeText = supportType.options[supportType.selectedIndex].text;
+            let amount = '';
+            if (supportTypeValue === 'custom') {
+                amount = customAmount.value ? `$${customAmount.value}` : '';
+                supportTypeText = `Custom Amount (${amount})`;
+            } else {
+                amount = supportTypeText.match(/\$[0-9]+/g) ? supportTypeText.match(/\$[0-9]+/g)[0] : '';
+            }
+            closeModalFunc(supportModal);
+            showNotification(`Thank you, <b>${name}</b>!<br>Your support type: <b>${supportTypeText}</b><br>Email: <b>${email}</b><br>Phone: <b>${phone}</b>`);
+            this.reset();
+            customAmountContainer.classList.remove('active');
+        });
+
+        // Contact form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            console.log('Contact form submitted:', Object.fromEntries(formData));
+            showNotification('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Funding buttons event listeners
+        fundingButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const amount = this.getAttribute('data-amount');
+                openModal(supportModal);
+                showNotification(`Thank you for choosing to donate $${amount}! Please complete your donation.`);
+            });
+        });
+
+        // Tab functionality
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                const tabType = this.getAttribute('data-tab');
+                renderPrograms(tabType);
+            });
+        });
+
+        // See Impact button
+        seeImpactBtn.addEventListener('click', function() {
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === programModal) {
+                closeModalFunc(programModal);
+            }
+            if (event.target === supportModal) {
+                closeModalFunc(supportModal);
+            }
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render current programs by default
+            renderPrograms('current');
+            
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
